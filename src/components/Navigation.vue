@@ -1,5 +1,5 @@
 <template>
-  <v-card id="nav-drawer" class="pa-12" flat>
+  <v-card id="nav-menu" class="bg-native pa-12" flat>
     <v-card class="nav-top" elevation="12" width="356">
       <div class="nav-float">
         <v-list class="nav" rounded>
@@ -23,9 +23,7 @@
 </template>
 
 <script>
-// import { getData } from "../assets/helpers/options";
 
-// var cvFile = require(getData("cv").data.path);
 import cvFile from '../assets/helpers/data/Khaled_Almana.pdf';
 
 export default {
@@ -41,12 +39,6 @@ export default {
       ]
     };
   },
-  methods: {
-    downloadCV() {
-    //  window.open(require(cvFile), '_blank') //to open in new tab
-   },
-
-  }
 };
 </script>
 

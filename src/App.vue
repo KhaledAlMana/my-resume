@@ -1,17 +1,29 @@
 <template>
-  <v-app>
-    <v-navigation-drawer id="nav-menu" width="320" v-if="!$route.meta.hideNavigation" floating app>
+  <v-app class="bg-native">
+    <v-navigation-drawer
+      id="nav-menu"
+      class="bg-native"
+      width="320"
+      v-if="!$route.meta.hideNavigation"
+      floating
+      app
+    >
       <Navigation />
     </v-navigation-drawer>
     <v-navigation-drawer
-      v-model="drawer"
       id="nav-menu-mobile"
       width="320"
+      height="100%"
       v-if="!$route.meta.hideNavigation"
-      permanent
+      v-model="drawer"
       temporary
-      style="display:none;"
+      app
     >
+      <div class="nav-menu-mobile-close">
+        <v-btn class="bg-native" @click.stop="drawer = !drawer">
+          <v-icon medium>{{icons.close}}</v-icon>
+        </v-btn>
+      </div>
       <Navigation />
     </v-navigation-drawer>
     <v-content>
@@ -26,15 +38,17 @@
         </div>
 
         <div class="middle curvy-box">
+          <div id="nav-menu-mobile-btn">
+            <v-btn class="nav-button" dark @click.stop="drawer = !drawer">
+              <v-icon left>{{icons.menu}}</v-icon>
+            </v-btn>
+          </div>
+
           <router-view></router-view>
         </div>
       </v-container>
     </v-content>
-
-    <v-footer id="footer" app>
-      <v-btn class="nav-button" dark @click.stop="drawer = !drawer">
-        <v-icon left>{{icons.menu}}</v-icon>
-      </v-btn>
+    <v-footer id="footer" class="bg-native" app>
       <small>&copy; Copyright {{CurrentYear}}, Khaled Al Mana</small>
     </v-footer>
   </v-app>
@@ -43,7 +57,7 @@
 <script>
 import Navigation from "./components/Navigation";
 import { getData } from "./assets/helpers/options";
-import { mdiMenu } from "@mdi/js";
+import { mdiMenu, mdiClose } from "@mdi/js";
 
 const GeneralData = getData("general").data;
 
@@ -54,7 +68,17 @@ export default {
   },
   data() {
     var CurrentYear = new Date().getFullYear();
-    return { drawer: null, CurrentYear, GeneralData, icons: { menu: mdiMenu } };
+    return {
+      drawer: null,
+      CurrentYear,
+      GeneralData,
+      icons: { menu: mdiMenu, close: mdiClose }
+    };
+  },
+  watch: {
+    $route(to) {
+      document.title = to.meta.title || "Khaled";
+    }
   }
 };
 </script>
@@ -72,8 +96,8 @@ body {
   }
 }
 
-#app {
-  background-color: inherit;
+.bg-native {
+  background-color: inherit !important;
 }
 
 .top {
@@ -109,40 +133,39 @@ body {
 }
 
 // Navigation Menu
-@media screen and (min-width: 600px) {
-  #nav-menu {
-    background-color: inherit;
-    border: 0px solid;
-    margin-top: 30px;
-    display: block;
-  }
-  #nav-menu-mobile {
+#nav-menu {
+  border: 0px solid;
+  margin-top: 30px;
+}
+
+#nav-menu-mobile {
+  border: 0px solid;
+  background-image: $bg-color;
+}
+
+#nav-menu-mobile-btn {
   display: none;
-  }
-  #footer {
-    background-color: inherit;
-    margin: 0 auto;
-    text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  @media screen and (max-width: 1263px) {
+    top: 25%;
+    right: 0px;
     position: fixed;
+    display: inline-block;
+    z-index: 1;
   }
 }
 
-@media screen and (max-width: 600px) {
-  #nav-menu-mobile {
-    background-color: inherit;
-    border: 0px solid;
-    margin-top: 30px;
-    display: block;
+.nav-menu-mobile-close {
+  float: right;
+  button {
+    box-shadow: 0px 0px 0px grey;
   }
-  #nav-menu {
-    display: none;
-  }
+}
 
-  #footer {
-    background-color: inherit;
-    margin: 0 auto;
-    text-align: center;
-    position: relative;
-  }
+#footer {
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
 }
 </style>

@@ -11,16 +11,18 @@ import NotFound from './components/NotFound'
 
 
 Vue.use(VueRouter)
+import { name as AppName } from '../package.json';
+
 
 const router = new VueRouter({
   routes: [
-    {name:"About Me", path: '/', component: AboutMe},
-    {name:"Education", path: '/education', component: Education},
-    {name:"Experience", path: '/experience', component: Experience, meta:{ title: "Experience"}},
-    {name:"Skills", path: '/skills', component: Skills},
-    {name:"Download", path: '/download', component: Download, meta:{hideNavigation:true, hideTitleBar: true, largeChips: true}},
-    {name:"Secret", path: '/secret', component: Secret},
-    {path: '*', component: NotFound}
+    { name: "About Me", path: '/', component: AboutMe, meta: { title: "About Khaled" } },
+    { name: "Education", path: '/education', component: Education, meta: { title: AppName + " Education" } },
+    { name: "Experience", path: '/experience', component: Experience, meta: { title: AppName + " Experience" } },
+    { name: "Skills", path: '/skills', component: Skills, meta: { title: AppName + " Skills" } },
+    { name: "Download", path: '/download', component: Download, meta: { hideNavigation: true, hideTitleBar: true, largeChips: true } },
+    { name: "Secret", path: '/secret', component: Secret, meta: { title: AppName + " Secret" } },
+    { path: '*', component: NotFound }
   ],
   mode: 'history'
 })
