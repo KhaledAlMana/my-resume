@@ -17,7 +17,7 @@
     "js-yaml": "^3.13.1",
     "less": "^3.11.1",
     "less-loader": "^5.0.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^4.14.1",
     "path": "^0.12.7",
     "timeline-vuejs": "^1.1.1",
     "vue": "^2.6.11",
