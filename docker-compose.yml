@@ -1,6 +1,8 @@
 version: '3'
 services:
-  app:
+  my-resume:
+    restart: always
+    container_name: my-resume
     image: "khaledalmana/personal:latest"
     ports:
-      - "8080:8080"
+      - "8080:3200"

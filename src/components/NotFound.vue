@@ -1,15 +1,31 @@
 <template>
-<h1>Nehahaha Not Found ^v^</h1>    
+<div class="not-found">
+    <img :src="`${icons.test}`">
+    <h1>Page Not Found </h1>    
+</div>
 </template>
 <script lang="js">
+// import { mdiHelpRhombusOutline } from "@mdi/js";
+var notFoundIcon = require("../assets/helpers/imgs/not-found.png");    
+
 export default {
-    name: "NotFound"
+    name: "NotFound",
+    data(){
+        return { icons:{ test: notFoundIcon } };
+    }
 }
 </script>
 
-<style scoped>
-h1 {
-    color : red;
+<style lang="scss" scoped>
+
+.not-found {
+    text-align: center;
+    h1 {
+        color : black;
+    }
+    .v-icon{
+        color: darkgreen;
+    }
 }
 </style>
 
