@@ -47,9 +47,9 @@
             <div class="my-1 subtitle-1">
               <span>{{AboutMeData.objective}}</span>
             </div>
-            <br />
+<br><br>
             <v-chip-group active-class="light-blue accent-4 white--text" column multiple>
-              <div class="px-1 my-1 subtitle-1 sub-head">
+              <div class="px-1 pr-2 subtitle-1 sub-head">
                 <span>Languages</span>
               </div>
               <v-tooltip v-for="(languages, i) in AboutMeData.languages" :key="i" top>
@@ -62,17 +62,17 @@
             </v-chip-group>
             <br />
             <v-chip-group active-class="light-blue accent-4 white--text" column>
-              <div class="px-1 my-1 subtitle-1 sub-head">
+              <div class="px-1 pr-6 subtitle-1 sub-head">
                 <span>Location</span>
               </div>
-              <div class="px-5 my-1 subtitle-1 sub-head">
+              <div class="px-1 subtitle-1 sub-head">
                 <span>{{AboutMeData.location}}</span>
               </div>
             </v-chip-group>
             <br />
-            <v-chip-group active-class="light-blue accent-4 white--text" column>
+            <v-chip-group class="long-val-mobile pr-3" active-class="light-blue accent-4 white--text" column>
               <div class="px-1 my-1 subtitle-1 sub-head">
-                <span>Contact Me</span>
+                <span>Contact Me</span> <br>
               </div>
 
               <a :href="`tel:${AboutMeData.contact.phone}`" class="contact-icons">
@@ -163,5 +163,10 @@ export default {
 }
 .contact-icons {
   text-decoration: none;
+}
+.long-val-mobile {
+  a {
+    background-image: red !important;
+  } 
 }
 </style>

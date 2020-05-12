@@ -30,10 +30,16 @@
       <v-container fluid>
         <div class="top curvy-box" v-if="!$route.meta.hideTitleBar">
           <h2>
-            <vue-typer :text="`> Hello, World! I'm ${GeneralData.title}!`" pre-erase-delay="7000"></vue-typer>
+            <vue-typer id="vtyperTitle" @typed-char="onTypedCharTitle" :text="title" :repeat="0"></vue-typer>
           </h2>
           <h4>
-            <vue-typer :text="`> ${GeneralData.subtitle}`" pre-type-delay="5000" pre-erase="5000"></vue-typer>
+            <vue-typer
+              id="vtyperSubtitle"
+              @typed-char="onTypedCharSubtitle"
+              :text="subtitle"
+              :repeat="0"
+              pre-type-delay="3200"
+            ></vue-typer>
           </h4>
         </div>
 
@@ -69,11 +75,80 @@ export default {
   data() {
     var CurrentYear = new Date().getFullYear();
     return {
+      countWordTitle: 0,
+      countWordSutTitle: 0,
+      title: "> Hello, World! I'm " + GeneralData.title + "!",
+      subtitle: "> " + GeneralData.subtitle,
       drawer: null,
       CurrentYear,
-      GeneralData,
       icons: { menu: mdiMenu, close: mdiClose }
     };
+  },
+  methods: {
+    onTypedCharTitle: function(typedChar, typedCharIndex) {
+      var vtyperElement = document.getElementById("vtyperTitle");
+
+      if (typedCharIndex == 0) {
+        vtyperElement.firstChild.innerHTML = "";
+      }
+      var lessNodes = vtyperElement.lastChild.childNodes;
+      if (typedChar == " " || lessNodes.length == 1) {
+        var finalNodes = vtyperElement.firstChild;
+        var listNodes = finalNodes.childNodes;
+
+        var newNode = document.createElement("span");
+
+        var x = this.countWordTitle;
+        var countNodes = listNodes.length;
+        while (x < countNodes) {
+          if (listNodes[this.countWordTitle].innerHTML != " ")
+            newNode.insertAdjacentElement(
+              "beforeend",
+              listNodes[this.countWordTitle]
+            );
+          else this.countWordTitle++;
+
+          // TODO: ADD LAST CHAR
+          x++;
+        }
+        newNode.className = "nowrap";
+        finalNodes.insertAdjacentElement("beforeend", newNode);
+
+        this.countWordTitle++;
+      }
+    },
+    onTypedCharSubtitle: function(typedChar, typedCharIndex) {
+      var vtyperElement = document.getElementById("vtyperSubtitle");
+
+      if (typedCharIndex == 0) {
+        vtyperElement.firstChild.innerHTML = "";
+      }
+      var lessNodes = vtyperElement.lastChild.childNodes;
+      if (typedChar == " " || lessNodes.length == 1) {
+        var finalNodes = vtyperElement.firstChild;
+        var listNodes = finalNodes.childNodes;
+
+        var newNode = document.createElement("span");
+
+        var x = this.countWordSubtitle;
+        var countNodes = listNodes.length;
+        while (x < countNodes) {
+          if (listNodes[this.countWordSubtitle].innerHTML != " ")
+            newNode.insertAdjacentElement(
+              "beforeend",
+              listNodes[this.countWordSubtitle]
+            );
+          else this.countWordSubtitle++;
+
+          // TODO: ADD LAST CHAR
+          x++;
+        }
+        newNode.className = "nowrap";
+        finalNodes.insertAdjacentElement("beforeend", newNode);
+
+        this.countWordSubtitle++;
+      }
+    }
   },
   watch: {
     $route(to) {
@@ -105,6 +180,10 @@ body {
   margin-left: 25%;
   margin-right: 25%;
   padding: 3px;
+
+  span.nowrap {
+    white-space: nowrap;
+  }
 }
 
 .curvy-box {
@@ -148,7 +227,7 @@ body {
   overflow: hidden;
   white-space: nowrap;
   @media screen and (max-width: 1263px) {
-    top: 25%;
+    top: 33%;
     right: 0px;
     position: fixed;
     display: inline-block;
