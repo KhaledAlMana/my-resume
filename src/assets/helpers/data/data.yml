@@ -39,7 +39,7 @@ experience:
   from: Apr 2019
   to: Present
   description: |
-    Assigned on micro-services development at myStore Internal STC Retail System. Leading the cross DevOps. Internal VPN.
+    Assigned on micro-services development at myStore Internal STC Retail Systems. Leading the DevOps across multiple projects, VPN, architecting, and I make some scripts.
   city: Riyadh, Saudi Arabia
   website: https://channels.com.sa
   logo: ./imgs/channels.jpeg
@@ -50,7 +50,7 @@ experience:
   from: Oct 2018
   to: Apr 2019
   description: |
-    Assigned to facilitate various deployments, and utilize the company
+    Assigned to facilitate various of deployments, and utilize company's
     development infrastructure to the optimum quality using the
     minimum resources.
   city: Khobar, Saudi Arabia
@@ -87,8 +87,8 @@ experience:
   from: Oct 2017
   to: May 2018
   description: |
-    On Charged to test, debug, and maintain Linux Servers. Also, setup 
-    development and production environment.
+    On charge to test, and debug applications. Maintain Linux Servers. Also, setup 
+    development and production environments.
   city: Khobar, Saudi Arabia  
   website: https://innosoft.com.sa
   logo: ./imgs/innosoft.jpg
@@ -112,8 +112,7 @@ experience:
   from: Jun 2014
   to: Aug 2014
   description: |
-    Tasked to process the data of the new costumers, and review data
-    entry to ensure that data is accurate and complete.
+    Tasked to process the data of the new customers, and ensure that is accurate and complete.
   city: Al-Ahsa, Saudi Arabia  
   website: https://se.com.sa
   logo: ./imgs/se.png
