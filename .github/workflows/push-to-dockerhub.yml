@@ -1,7 +1,15 @@
-uses: mr-smithers-excellent/docker-build-push@v4
-with:
-  image: khaledalmana/personal
-  tag: latest
-  registry: docker.io
-  username: ${{ secrets.DOCKER_USERNAME }}
-  password: ${{ secrets.DOCKER_PASSWORD }}
+name: Publish Docker Image 
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Publish to Registry
+      uses: elgohr/Publish-Docker-Github-Action@master
+      with:
+        image: khaledalmana/personal
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        tag: latest
+        registry: docker.io
