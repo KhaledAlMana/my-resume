@@ -129,9 +129,11 @@ education:
   
 skills:
 - name: Web Stacks
+- name: NodeJS 
 - name: ExpressJS 
 - name: Restify 
 - name: VueJS
+- name: Django
 - name: Slim FW
 - name: OctoberCMS
 - name: Wordpress
