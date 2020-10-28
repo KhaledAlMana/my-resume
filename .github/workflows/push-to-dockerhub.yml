@@ -1,12 +1,14 @@
 name: Publish Docker Image 
 on: [push]
+    branches:
+        - master
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest 
     steps:
     - uses: actions/checkout@master
-    - name: Publish to Registry
-      uses: elgohr/Publish-Docker-Github-Action@master
+    - uses: elgohr/Publish-Docker-Github-Action@master
+      name: Publish to Registry
       with:
         image: khaledalmana/personal
         username: ${{ secrets.DOCKER_USERNAME }}
