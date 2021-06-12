@@ -1,0 +1,181 @@
+/* #*/ export const data = `
+general:
+  title: Khaled Al Mana
+  subtitle: Software Engineer at STC Channels
+
+cv:
+  path: ../assets/helpers/data/Khaled_Almana.pdf
+aboutMe:
+  logo: ./data/profile.jpeg
+  name:
+    first: Khaled
+    last: Al Mana
+  position: Software Engineer at STC Channels
+  objective: |
+    Seeking a position where I can leverage my whole experience and
+    knowledge with a growing company to achieve the optimum
+    utilization in its projects.
+  location: Riyadh, Saudi Arabia
+  languages: 
+    - name: Arabic
+      tooltip: لغتي الأم
+    - name: English
+      tooltip: Fluent
+  contact:
+    email: ikhaledim@gmail.com
+    phone: '+966542430800'
+    website: khaled.cloud
+  profiles:
+    github:
+      url: 'https://github.com/khaledalmana'
+      enabled: true
+    linkedin: 
+      url: 'https://linkedin.com/in/khaled-al-mana/'
+      enabled: true
+
+experience:
+- company: STC Channels
+  position: Software Engineer
+  from: Apr 2019
+  to: Present
+  description: |
+    - Worked in various of areas, from infrastructure to project delivery.
+    - Developing Internal STC Systems using reactive microservices architecture. - Leading the DevOps across multiple projects by employing automated backups, scripting, CI/CD, and orchastating VPN.
+    - Lead design, develop, test, and deliver solution using frameworks such as: Lagom, ExpressJS, NuxtJS.
+    - Desing a bilingual WhatsApp chatbot.
+    - Automate reports via SMS, and emails.
+    - Plan, and implement disaster recovery for the department.
+    - Contributed in 4+ successful projects.
+  city: Riyadh, Saudi Arabia
+  website: https://channels.com.sa
+  logo: ./imgs/channels.jpeg
+  color: purple
+
+- company: Innosoft LLC.
+  position: Infrastructure Team Leader
+  from: Oct 2018
+  to: Apr 2019
+  description: |
+    Assigned to facilitate various of deployments, and utilize company's
+    development infrastructure to the optimum quality using the
+    minimum resources.
+  city: Khobar, Saudi Arabia
+  website: https://innosoft.com.sa
+  logo: ./imgs/innosoft.jpg
+  color: blue
+ 
+- company: Innosoft LLC.
+  position: Development Team Leader Assistant 
+  from: Oct 2018
+  to: Apr 2019
+  description: |
+    Co-manage projects, utilize resources, find the gaps and struggles to
+    solve them in need to facilitate the process of the development.
+  city: Khobar, Saudi Arabia
+  website: https://innosoft.com.sa
+  logo: ./imgs/innosoft.jpg
+  color: blue
+
+- company: Innosoft LLC.
+  position: Full-Stack Developer - Full-Time
+  from: May 2018
+  to: Oct 2018
+  description: |
+    Worked in Web Development using October CMS, APIs, and side
+    scripting to solve issues such as Data Migration.
+  city: Khobar, Saudi Arabia  
+  website: https://innosoft.com.sa
+  logo: ./imgs/innosoft.jpg
+  color: blue
+
+- company: Innosoft LLC.
+  position: Full-Stack Developer - Part-Time
+  from: Oct 2017
+  to: May 2018
+  description: |
+    On charge to test, and debug applications. Maintain Linux Servers. Also, setup 
+    development and production environments.
+  city: Khobar, Saudi Arabia  
+  website: https://innosoft.com.sa
+  logo: ./imgs/innosoft.jpg
+  color: blue
+
+- company: Innosoft LLC.
+  position: Summer Trainee
+  from: Jul 2017
+  to: Oct 2017
+  description: |
+    Mainly, worked as a backend developer (with web-sockets), and
+    scripting to fulfill the company's infrastructure requirements. Also,
+    as a tester, and debugger.
+  city: Khobar, Saudi Arabia  
+  website: https://innosoft.com.sa
+  logo: ./imgs/innosoft.jpg
+  color: blue
+
+- company: Saudi Electricity Company
+  position: Data Processor
+  from: Jun 2014
+  to: Aug 2014
+  description: |
+    Tasked to process the data of the new customers, and ensure that is accurate and complete.
+  city: Al-Ahsa, Saudi Arabia  
+  website: https://se.com.sa
+  logo: ./imgs/se.png
+  color: blue
+
+
+education:
+- degree: Bachelor of Science in Computer Science
+  period: Aug 2014 – May 2018
+  university: King Faisal University, Saudi Arabia
+  gpa: 3.99/5
+  logo: ./imgs/kfu.png
+  website: https://www.kfu.edu.sa
+  
+skills:
+- name: Web Stacks
+- name: NodeJS 
+- name: ExpressJS 
+- name: Restify 
+- name: VueJS
+- name: Django
+- name: Slim FW
+- name: OctoberCMS
+- name: Wordpress
+- name: Drupal
+- name: APIs
+- name: WebSockets
+- name: Version Control
+- name: Jenkins CI
+- name: CDN
+- name: Plesk & cPanel
+- name: Data Migration
+- name: Integrations
+- name: AWS VPC
+- name: AWS S3
+- name: AWS RDS
+- name: AWS ALB
+- name: AWS ELB
+- name: AWS EC2
+- name: Docker
+- name: Kubernetes
+- name: MySQL
+- name: postgreSQL
+- name: MongoDB
+- name: SQL & NoSQL Databases
+- name: SQL & NoSQL Client Apps
+- name: SSH
+- name: HTML5
+- name: SCSS
+- name: JS
+- name: php
+- name: python
+- name: Java
+- name: Bash
+- name: VPN
+- name: Linux, Mac, Windows User
+- name: Google Suite
+- name: iWork & MS Office
+
+`
