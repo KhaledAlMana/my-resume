@@ -13,7 +13,7 @@ env:
 
 jobs:
   ci:
-    if: ${{ env.CI_ENABLED }} == true
+    if: ${{ CI_ENABLED }} == true
     runs-on: ${{ matrix.os }}
 
     strategy:
@@ -44,7 +44,7 @@ jobs:
           tags: khaledalmana/personal:latest
   cd:
     needs: [ci]
-    if: ${{ env.CD_ENABLED }} == true
+    if: ${{ CD_ENABLED }} == true
     runs-on: ${{ matrix.os }}
 
     strategy:
