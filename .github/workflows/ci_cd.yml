@@ -7,44 +7,39 @@ on:
   pull_request:
     branches:
       - master
-env:
-  CI_ENABLED: false
-  CD_ENABLED: true
 
 jobs:
-  ci:
-    if: ${{ CI_ENABLED }} == true
-    runs-on: ${{ matrix.os }}
+  # ci:
+  #   runs-on: ${{ matrix.os }}
 
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
+  #   strategy:
+  #     matrix:
+  #       os: [ubuntu-latest]
 
-    steps:
-      - name: Checkout 🛎
-        uses: actions/checkout@master
+  #   steps:
+  #     - name: Checkout 🛎
+  #       uses: actions/checkout@master
 
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v1
+  #     - name: Set up QEMU
+  #       uses: docker/setup-qemu-action@v1
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
+  #     - name: Set up Docker Buildx
+  #       uses: docker/setup-buildx-action@v1
 
-      - name: Login to DockerHub
-        uses: docker/login-action@v1
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+  #     - name: Login to DockerHub
+  #       uses: docker/login-action@v1
+  #       with:
+  #         username: ${{ secrets.DOCKERHUB_USERNAME }}
+  #         password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
-      - name: Build and Push
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          push: true
-          tags: khaledalmana/personal:latest
+  #     - name: Build and Push
+  #       uses: docker/build-push-action@v2
+  #       with:
+  #         context: .
+  #         push: true
+  #         tags: khaledalmana/personal:latest
   cd:
-    needs: [ci]
-    if: ${{ CD_ENABLED }} == true
+    # needs: [ci]
     runs-on: ${{ matrix.os }}
 
     strategy:
