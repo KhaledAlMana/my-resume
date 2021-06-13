@@ -16,7 +16,7 @@
               </v-list-item-content>
             </v-list-item>
           </nuxt-link>
-          <v-btn :href="`${cv}`" value="Open" class="download" download block
+          <v-btn href="/Khaled_Almana.pdf" class="download" download block
             >Download CV</v-btn
           >
         </v-list>
@@ -26,13 +26,10 @@
 </template>
 
 <script>
-import cvFile from "~/static/Khaled_Almana.pdf";
-
 export default {
   name: "Navigation",
   data() {
     return {
-      cv: cvFile,
       items: [
         { link: "/", title: "About Me" },
         { link: "/education", title: "Education" },
