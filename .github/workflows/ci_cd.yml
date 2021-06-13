@@ -3,11 +3,9 @@ name: ci
 on:
   push:
     branches:
-      - main
       - master
   pull_request:
     branches:
-      - main
       - master
 
 jobs:
@@ -40,3 +38,19 @@ jobs:
           context: .
           push: true
           tags: khaledalmana/personal:latest
+  cd:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+
+      - name: SSH command runner
+        # uses: Evaneos/ssh-action@0e5f8933569a924cad91d22e30f7ecfb5d8426f2
+        uses: Evaneos/ssh-action@v0.1.0
+        with:
+          hosts: ${{ secrets.HOST }}
+          commands: ${{ secrets.COMMAND }}
+          user:  ${{ secrets.USER }}
+          private_key: ${{ secrets.PRIVATE_KEY }}
+
