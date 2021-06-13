@@ -9,37 +9,38 @@ on:
       - master
 
 jobs:
-  # ci:
-  #   runs-on: ${{ matrix.os }}
+  ci:
+    runs-on: ${{ matrix.os }}
 
-  #   strategy:
-  #     matrix:
-  #       os: [ubuntu-latest]
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
 
-  #   steps:
-  #     - name: Checkout 🛎
-  #       uses: actions/checkout@master
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@master
 
-  #     - name: Set up QEMU
-  #       uses: docker/setup-qemu-action@v1
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
 
-  #     - name: Set up Docker Buildx
-  #       uses: docker/setup-buildx-action@v1
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
 
-  #     - name: Login to DockerHub
-  #       uses: docker/login-action@v1
-  #       with:
-  #         username: ${{ secrets.DOCKERHUB_USERNAME }}
-  #         password: ${{ secrets.DOCKERHUB_PASSWORD }}
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
-  #     - name: Build and Push
-  #       uses: docker/build-push-action@v2
-  #       with:
-  #         context: .
-  #         push: true
-  #         tags: khaledalmana/personal:latest
+      - name: Build and Push
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          push: true
+          tags: khaledalmana/personal:latest
+
   cd:
-    # needs: [ci]
+    needs: [ci]
     runs-on: ${{ matrix.os }}
 
     strategy:
@@ -48,13 +49,8 @@ jobs:
 
     steps:
       - name: SSH Execute Commands
-        # You may pin to the exact commit or the version.
-        # uses: JimCronqvist/action-ssh@1c03e01b4ac39da814b45cfd2924c2df0ff1396f
         uses: JimCronqvist/action-ssh@0.1.1
         with:
-          # Command(s) to execute on the remote server.
           command: cd ~/my-resume && docker-compose pull && docker-compose up -d
-          # Hostname or IP address of the remote server(s). Separate multiple servers with a blank space. Example: 'user@mydomain.com:22 user@otherdomain.com:2222'
           hosts: ${{ secrets.USER }}@${{ secrets.HOST }}
-          # The private key (id_rsa) content for authenticating to the SSH server(s). Recommended to store it as a GitHub Secret.
           privateKey: ${{ secrets.PRIVATE_KEY }}
