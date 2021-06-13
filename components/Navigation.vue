@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import cvFile from "~/assets/helpers/data/Khaled_Almana.pdf";
+import cvFile from "~/static/Khaled_Almana.pdf";
 
 export default {
   name: "Navigation",

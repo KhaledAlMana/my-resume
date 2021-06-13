@@ -35,6 +35,7 @@ aboutMe:
     bayt: 
       url: 'https://people.bayt.com/khaled-al-mana/'
       enabled: true
+      
 experience:
 - company: STC Channels
   position: Software Engineer

@@ -23,8 +23,6 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-
 export default {
   name: "TyperHeader",
   data() {
@@ -37,7 +35,6 @@ export default {
     await this.$store.dispatch("data/fetchData", "general");
   },
   computed: {
-    ...mapGetters("data/getData"),
     title: {
       get() {
         return (

@@ -8,7 +8,7 @@
 </template>
 
 <script>
-var notFoundIcon = require("../assets/helpers/imgs/not-found.png");
+var notFoundIcon = require("/assets/imgs/not-found.png");
 
 export default {
   layout: "default",
