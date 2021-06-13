@@ -39,4 +39,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: khaledalmana/my-resume:latest
+          tags: khaledalmana/personal:latest
