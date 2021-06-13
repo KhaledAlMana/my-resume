@@ -39,6 +39,7 @@ jobs:
           push: true
           tags: khaledalmana/personal:latest
   cd:
+    needs: [ci]
     runs-on: ${{ matrix.os }}
 
     strategy:
