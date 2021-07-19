@@ -44,12 +44,12 @@ experience:
   description: |
     - Worked in various of areas, from infrastructure to project delivery. <br>
     - Developing Internal STC Systems using reactive microservices architecture. <br>
-    - Leading the DevOps across multiple projects by employing automated backups, scripting, CI/CD, and orchastating VPN.<br>
+    - Leading the DevOps across multiple projects by employing automated backups, scripting, CI/CD, and orchestrating VPN.<br>
     - Lead design, develop, test, and deliver solution using frameworks such as: Lagom, ExpressJS, NuxtJS.<br>
-    - Desing a bilingual WhatsApp chatbot.<br>
+    - Design a bilingual WhatsApp chatbot.<br>
     - Automate reports via SMS, and emails.<br>
     - Plan, and implement disaster recovery for the department.<br>
-    - Contributed in 4+ successful projects.<br>
+    - Contributed to 4+ successful projects.<br>
   city: Riyadh, Saudi Arabia
   website: https://channels.com.sa
   logo: ./imgs/channels.jpeg
@@ -60,9 +60,9 @@ experience:
   from: Oct 2018
   to: Apr 2019
   description: |
-    - Co-manage projects, and follow the best practices of secure development. Find the gaps and struggles with the team and solve them. Manage environments from developemnt to production, and deployments. Utilize infrastructure value-efficiently.<br>
+    - Co-manage projects, and follow the best practices of secure development. Find the gaps and struggles with the team and solve them. Manage environments from development to production, and deployments. Utilize infrastructure value-efficiently.<br>
     - Design, develop, test, and deliver solution.<br>
-    - Automate processes, backups, environemnts, deployments. - Setup internal networking.<br>
+    - Automate processes, backups, environments, deployments. - Setup internal networking.<br>
     - Contributed in 5+ successful public projects.<br>
   city: Khobar, Saudi Arabia
   website: https://innosoft.com.sa
@@ -75,7 +75,7 @@ experience:
   to: Oct 2018
   description: |
     - Optimize the process and cache Sports Data via API, then expose it through API over OctoberCMS.<br>
-    - Contribute to retireve data using webscrapping from a completely lost access website.<br>
+    - Contribute to retrieve data using web scrapping from a completely lost access website.<br>
   city: Khobar, Saudi Arabia  
   website: https://innosoft.com.sa
   logo: ./imgs/innosoft.jpg
@@ -101,7 +101,7 @@ experience:
   to: Oct 2017
   description: |
     - Developed driver tracking feature using web-socket using tornado.<br>
-    - Built a solution to track employees' attendence by tracking the time of connectivity of their mac address using selenium.<br>
+    - Built a solution to track employees' attendance by tracking the time of connectivity of their mac address using selenium.<br>
   city: Khobar, Saudi Arabia  
   website: https://innosoft.com.sa
   logo: ./imgs/innosoft.jpg
@@ -117,7 +117,6 @@ experience:
   website: https://se.com.sa
   logo: ./imgs/se.png
   color: blue
-
 
 education:
 - degree: Bachelor of Science in Computer Science
