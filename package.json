@@ -14,7 +14,7 @@
     "@mdi/js": "^5.9.55",
     "@nuxtjs/pwa": "^3.3.5",
     "core-js": "^3.9.1",
-    "nuxt": "^2.15.3",
+    "nuxt": "^3.0.0",
     "prettier-eslint": "^12.0.0",
     "vue-typer": "^1.2.0"
   },
